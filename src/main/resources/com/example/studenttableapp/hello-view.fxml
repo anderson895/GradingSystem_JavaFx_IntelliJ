@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.studenttableapp.StudentController">
+
+    <center>
+        <TableView fx:id="studentTable">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="courseColumn" text="Course" prefWidth="150"/>
+                <TableColumn fx:id="averageColumn" text="Average" prefWidth="100"/>
+                <TableColumn fx:id="actionColumn" text="Actions" prefWidth="180"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox alignment="center" spacing="10" style="-fx-padding:10;">
+            <Button fx:id="addButton" text="Add Student" onAction="#showAddForm"/>
+        </HBox>
+    </bottom>
+</BorderPane>
