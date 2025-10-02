@@ -6,22 +6,33 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.studenttableapp.StudentController">
+            fx:controller="com.example.studenttableapp.StudentController"
+            style="-fx-background-color: #f4f4f4;">
 
+    <!-- Top section: Title -->
+    <top>
+        <Label text="Student Management" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-padding: 20;" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <!-- Center section: Table -->
     <center>
-        <TableView fx:id="studentTable">
-            <columns>
-                <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
-                <TableColumn fx:id="courseColumn" text="Course" prefWidth="150"/>
-                <TableColumn fx:id="averageColumn" text="Average" prefWidth="100"/>
-                <TableColumn fx:id="actionColumn" text="Actions" prefWidth="180"/>
-            </columns>
-        </TableView>
+        <VBox spacing="10" style="-fx-padding: 15;" VBox.vgrow="ALWAYS">
+            <TableView fx:id="studentTable" style="-fx-border-color: #d3d3d3; -fx-border-radius: 5; -fx-background-radius: 5;" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="250" />
+                    <TableColumn fx:id="courseColumn" text="Course" prefWidth="250" />
+                    <TableColumn fx:id="averageColumn" text="Average" prefWidth="150" />
+                    <TableColumn fx:id="actionColumn" text="Actions" prefWidth="200" />
+                </columns>
+            </TableView>
+        </VBox>
     </center>
 
+    <!-- Bottom section: Add Button -->
     <bottom>
-        <HBox alignment="center" spacing="10" style="-fx-padding:10;">
-            <Button fx:id="addButton" text="Add Student" onAction="#showAddForm"/>
+        <HBox alignment="CENTER" spacing="15" style="-fx-padding: 15;">
+            <Button fx:id="addButton" text="Add Student" onAction="#showAddForm"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 24;"/>
         </HBox>
     </bottom>
 </BorderPane>

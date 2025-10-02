@@ -9,9 +9,17 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 400);
+
+        // Load the scene without fixed width/height
+        Scene scene = new Scene(fxmlLoader.load());
+
         stage.setTitle("Student Grading System");
         stage.setScene(scene);
+
+        // Set full screen
+        stage.setMaximized(true);   // Maximize the window
+        // stage.setFullScreen(true); // Optional: true full screen (no window borders)
+
         stage.show();
     }
 
